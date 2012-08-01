@@ -120,7 +120,7 @@ As per the <a href="http://services.sunlightlabs.com/accounts/register/#tos" tar
 
 = Why are the pictures not showing or are the wrong pictures? =
 
-Members of Congress change after elections and sometimes leave or are replaced midterm.  When this happens, your locally hosted zip file of their pictures needs to be updated to stay accurate.  There is a button in the plugin Admin settings to download the most recent copy of the picture zip file.</p>
+Members of Congress change after elections and sometimes leave or are replaced midterm.  When this happens, your locally hosted zip file of their pictures needs to be updated to stay accurate.  There is a button in the plugin Admin settings to download the most recent copy of the picture zip file.  Note: when the Sunlight Labs picture folder changes, you will receive a notice in your WP Admin to update the pictures.</p>
 
 = What legislator information can be displayed? =
 
