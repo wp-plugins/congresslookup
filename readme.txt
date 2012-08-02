@@ -87,12 +87,12 @@ We have added a cache feature you can set to reduce the number of requests made 
 
 CongressLookup uses free databases provided by the <a title="Sunlight Foundation: Making government trasparent and accountable" href="http://sunlightfoundation.com/" target="_blank">Sunlight Foundation</a> whose mission is to make government more transparent and accessible.  Part of what they do is maintain free databases of information about the US government.  We make use of their legislator information and legislator photos databases in CongressLookup plugin.  <a title="Sunlight Labs APIs" href="http://services.sunlightlabs.com/" target="_blank">From Sunlight Labs website</a>:</p>
 
-<blockquote>Sunlight Labs takes data inside and about government and transforms it into services developers can use. We do it for free because we think that if people can see what&#8217;s going on, it makes the country better. It might not sound like the most glamourous life ever, but it&#8217;s pretty great for us, as long as you make use of it.</blockquote>
+<blockquote>Sunlight Labs takes data inside and about government and transforms it into services developers can use. We do it for free because we think that if people can see what&#8217;s going on, it makes the country better. It might not sound like the most glamourous life ever, but it&#8217;s pretty great for us, as long as you make use of it.<br /></blockquote>
 
 = Why do I need my own Sunlight Labs API key? =
 
 You must use your own API key because it is required by their <a title="Sunlight Labs API Terms of Service" href="http://services.sunlightlabs.com/accounts/register/#tos" target="_blank">terms of service</a>:</p>
-<blockquote>Usage of Sunlight Services depends upon an API key which should only be used by the individual/organization which requested it. Sharing or distribution of API keys is not permitted.</blockquote>
+<blockquote>Usage of Sunlight Services depends upon an API key which should only be used by the individual/organization which requested it. Sharing or distribution of API keys is not permitted.<br /></blockquote>
 
 = How do I get a Sunlight Lab API key? =
 
@@ -149,9 +149,9 @@ There are three themes to choose from:</p>
 = How do I use CongressLookup on my site? =
 
 Use the following shortcode in a page or post:</p>
-<blockquote><p><em>&#91;CongressLookup&#93;</em></p></blockquote>
+<p><em>&#91;CongressLookup&#93;</em></p>
 <p>Use the following code in your template, outside of the loop:</p>
-<blockquote>`&lt;?php echo do_shortcode("&#91;CongressLookup&#93;"); ?&gt;`</blockquote>
+`&lt;?php echo do_shortcode("&#91;CongressLookup&#93;"); ?&gt;`
 
 = How do I contact support? =
 
