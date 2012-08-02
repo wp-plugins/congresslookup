@@ -113,7 +113,7 @@ As per the <a href="http://services.sunlightlabs.com/accounts/register/#tos" tar
 
 = Why are the pictures not showing or are the wrong pictures? =
 
-Members of Congress change after elections and sometimes leave or are replaced midterm.  When this happens, your locally hosted zip file of their pictures needs to be updated to stay accurate.  There is a button in the plugin Admin settings to download the most recent copy of the picture zip file.  Note: when the Sunlight Labs picture folder changes, you will receive a notice in your WP Admin to update the pictures.  Note: When the Sunlight Labs picture folder changes, you will receive a notice in your WP Admin to update the pictures.</p>
+Members of Congress change after elections and sometimes leave or are replaced midterm.  When this happens, your locally hosted zip file of their pictures needs to be updated to stay accurate.  There is a button in the plugin Admin settings to download the most recent copy of the picture zip file.  Note: when the Sunlight Labs picture folder changes, you will receive a notice in your WP Admin to update the pictures.</p>
 
 = What legislator information can be displayed? =
 
@@ -141,9 +141,9 @@ Minimum information needed is a 5-digit zip code.  However, some zip codes cover
 
 There are three themes to choose from:</p>
 <ul>
+<li><strong>Modern Theme</strong>: By default.</li>
 <li><strong>No Theme</strong>: Uses the core styling from your theme without adding any of it&#8217;s own.</li>
 <li><strong>Custom Theme</strong>: Allows you to create your own look using CSS and comes with a demo area to preview your changes.</li>
-<li><strong>Modern Theme</strong>: <img class="modern_theme" title="theme_modern" src="http://constructivegrowth.net/site/wp-content/uploads/2012/07/theme_modern-300x136.jpg" alt="" width="300" height="136" /></li>
 </ul>
 
 = How do I use CongressLookup on my site? =
