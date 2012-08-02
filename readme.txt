@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lookup US Congress members for specific zip codes and addresses.
+Give your visitors the ability to lookup US Congress members for specific zip codes and addresses.
 
 == Description ==
 
