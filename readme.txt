@@ -32,7 +32,8 @@ There are three theme options available: No Theme, Modern and Custom Theme.</p>
 </ul>
 <p><strong>Support</strong><br />
 Please use the CongressLookup plugin support tab on the WordPress.org website. Keeping support questions and answers public helps everyone. But feel free to <a href="http://constructivegrowth.net/contact-us/">contact us here</a> for any other help you may need.</p>
-
+<p><strong>Official Website</strong><br />
+http://congresslookup.com
 == Installation ==
 
 1. Unzip `CongressLookup.zip` and Upload folder to the `/wp-content/plugins/` directory
