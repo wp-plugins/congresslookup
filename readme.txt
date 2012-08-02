@@ -1,6 +1,6 @@
 === CongressLookup ===
 Contributors: ConstructiveGrowth, Quick2ouch, trishahdee
-Donate link: https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=dW6aHaZ9OlOg8YtP8C7aY_WWZYoOl8zXQtTRSLQUMt4P5WKxEF7n8p-Tm6m&dispatch=5885d80a13c0db1f8e263663d3faee8d7283e7f0184a5674430f290db9e9c846
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3ZSYXP8PLH6AJ
 Tags: congress, lookup, senator, representative, US congress, find senator, find representative
 Requires at least: 3.0
 Tested up to: 3.4.1
@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lookup US Congress members for specific zip codes and addresses.
+Give your visitors the ability to lookup US Congress members for specific zip codes and addresses.
 
 == Description ==
 
@@ -168,8 +168,8 @@ Please use the CongressLookup plugin support tab on the WordPress.org website.  
 
 == Screenshots ==
 
-1. CongressLookup frontend with Modern theme: congresslookup_modern_theme.jpg
-1. Settings > CongressLookup: congresslookup_admin_settings.jpg
+1. CongressLookup frontend with Modern theme screenshot-1.jpg
+1. Settings > CongressLookup screenshot-2.jpg
 
 == Changelog ==
 
