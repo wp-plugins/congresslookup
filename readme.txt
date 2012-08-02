@@ -168,8 +168,8 @@ Please use the CongressLookup plugin support tab on the WordPress.org website.  
 
 == Screenshots ==
 
-1. CongressLookup frontend with Modern theme: congresslookup_modern_theme.jpg
-1. Settings > CongressLookup: congresslookup_admin_settings.jpg
+1. CongressLookup frontend with Modern theme screenshot-1.jpg
+1. Settings > CongressLookup screenshot-2.jpg
 
 == Changelog ==
 
