@@ -43,14 +43,6 @@ http://congresslookup.com</p>
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
-
 = Why does it take so long for CongressLookup to install on my site? =
 
 As per the <a href="http://services.sunlightlabs.com/accounts/register/#tos" target="_blank">terms of use</a> for legislator photos from <a href="http://services.sunlightlabs.com/" target="_blank">Sunlight Labs</a>, you can not directly link (hotlink) to their site.  Therefore, you must host the images locally on your server.  We include the copy of the photos zip file with the plugin and, because of it&#8217;s size, may cause the plugin to install slower then you are used to.</p>
