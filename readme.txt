@@ -151,7 +151,7 @@ There are three themes to choose from:</p>
 Use the following shortcode in a page or post:</p>
 <p>`&#91;CongressLookup&#93;`</p>
 <p>Use the following code in your template, outside of the loop:</p>
-`&lt;?php echo do_shortcode("&#91;CongressLookup&#93;"); ?&gt;``
+&lt;?php echo do_shortcode("&#91;CongressLookup&#93;"); ?&gt;
 
 = How do I contact support? =
 
