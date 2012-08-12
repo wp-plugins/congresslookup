@@ -34,34 +34,20 @@ There are three theme options available: No Theme, Modern and Custom Theme.</p>
 Please use the CongressLookup plugin support tab on the WordPress.org website. Keeping support questions and answers public helps everyone. But feel free to <a href="http://constructivegrowth.net/contact-us/">contact us here</a> for any other help you may need.</p>
 <p><strong>Official Website</strong><br />
 http://congresslookup.com</p>
+
 == Installation ==
 
 1. Unzip `CongressLookup.zip` and Upload folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Configure in:  WP Admin > Settings > CongressLookup
+1. Or in your Plugin page "Add Plugin" search: enter "CongressLookup" then install and activate.
 1. To obtain a free Sunlight Labs API key for your site, <a href="http://services.sunlightlabs.com/accounts/register/" target="_blank">create a free account</a> and it will be emailed to you.
-1. Use shortcode [CongressLookup] in posts and pages, or place <br />`<?php echo do_shortcode("[CongressLookup]"); ?>` in your templates.
+1. Click the activation link in the Sunlight Labs email.
+1. Enter API key and configure in:  WP Admin > Settings > CongressLookup
+1. Use the following shortcode in a page or post: `[CongressLookup]`
+1. Use the following code in your template, placed outside the loop:<br />
+    `<?php echo do_shortcode("[CongressLookup]"); ?>`
 
 == Frequently Asked Questions ==
-
-= Quick Start Guide... =
-
-<i>Where is the CongressLookup settings page located?</i><br />
-WP Admin > Settings > CongressLookup
-
-<i>How do I get a Sunlight Lab API key?</i><br />
-To obtain a free API key for your site, <a href="http://services.sunlightlabs.com/accounts/register/" target="_blank">create a free account</a> and it will be emailed to you.
-
-<i>How do I show CongressLookup on my site?</i><br />
-Use the following shortcode in a page or post:
-
-    [CongressLookup]
-
-Use the following code in your template, placed outside the loop:
-
-    <?php echo do_shortcode("[CongressLookup]"); ?>
-
-
 
 = Why does it take so long for CongressLookup to install on my site? =
 
@@ -105,9 +91,9 @@ We have added a cache feature you can set to reduce the number of requests made 
 
 = What is the <a href="http://services.sunlightlabs.com/" target="_blank">Sunlight Lab API</a> used for? =
 
-CongressLookup uses free databases provided by the <a title="Sunlight Foundation: Making government trasparent and accountable" href="http://sunlightfoundation.com/" target="_blank">Sunlight Foundation</a> whose mission is to make government more transparent and accessible.  Part of what they do is maintain free databases of information about the US government.  We make use of their legislator information and legislator photos databases in CongressLookup plugin.  <a title="Sunlight Labs APIs" href="http://services.sunlightlabs.com/" target="_blank">From Sunlight Labs website</a>:</p>
+CongressLookup uses free databases provided by the <a title="Sunlight Foundation: Making government trasparent and accountable" href="http://sunlightfoundation.com/" target="_blank">Sunlight Foundation</a> whose mission is to make government more transparent and accessible.  Part of what they do is maintain free databases of information about the US government.  We make use of their legislator information and legislator photos databases in CongressLookup plugin.  <a title="Sunlight Labs APIs" href="http://services.sunlightlabs.com/" target="_blank">From Sunlight Labs website</a>:
 
-<blockquote>Sunlight Labs takes data inside and about government and transforms it into services developers can use. We do it for free because we think that if people can see what&#8217;s going on, it makes the country better. It might not sound like the most glamourous life ever, but it&#8217;s pretty great for us, as long as you make use of it.<br /></blockquote>
+<blockquote>Sunlight Labs takes data inside and about government and transforms it into services developers can use. We do it for free because we think that if people can see what&#8217;s going on, it makes the country better. It might not sound like the most glamorous life ever, but it&#8217;s pretty great for us, as long as you make use of it.<br /></blockquote>
 
 = Why do I need my own Sunlight Labs API key? =
 
@@ -175,7 +161,7 @@ Use the following shortcode in a page or post:</p>
 
 = How do I contact support? =
 
-Please use the CongressLookup plugin support tab on the WordPress.org website.  Keeping support questions and answers public helps everyone.  But feel free to <a href="http://constructivegrowth.net/contact-us/">contact us here</a> for any other help you may need.</p>
+Please use the CongressLookup plugin <a href="http://wordpress.org/support/plugin/congresslookup">Support Tab</a> above.  Keeping support questions and answers public helps everyone.  But feel free to <a href="http://constructivegrowth.net/contact-us/">contact us here</a> for any other help you may need.</p>
 
 <p><strong>Official Website</strong><br />
 http://congresslookup.com</p>
@@ -183,7 +169,7 @@ http://congresslookup.com</p>
 == Screenshots ==
 
 1. CongressLookup frontend with Modern theme screenshot-1.jpg
-1. Settings > CongressLookup screenshot-2.jpg
+1. WP Admin > Settings > CongressLookup screenshot-2.jpg
 
 == Changelog ==
 
