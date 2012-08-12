@@ -40,29 +40,26 @@ http://congresslookup.com</p>
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Configure in:  WP Admin > Settings > CongressLookup
 1. To obtain a free Sunlight Labs API key for your site, <a href="http://services.sunlightlabs.com/accounts/register/" target="_blank">create a free account</a> and it will be emailed to you.
-1. Use shortcode [CongressLookup] in posts and pages, or place `<?php echo do_shortcode("[CongressLookup]"); ?>` in your templates.
+1. Use shortcode [CongressLookup] in posts and pages, or place <br />`<?php echo do_shortcode("[CongressLookup]"); ?>` in your templates.
 
 == Frequently Asked Questions ==
 
 = Quick Start Guide... =
 
-Where is the CongressLookup settings page located?
+<i>Where is the CongressLookup settings page located?</i><br />
 WP Admin > Settings > CongressLookup
 
-How do I get a Sunlight Lab API key?
+<i>How do I get a Sunlight Lab API key?</i><br />
 To obtain a free API key for your site, <a href="http://services.sunlightlabs.com/accounts/register/" target="_blank">create a free account</a> and it will be emailed to you.
 
-Google Maps API Use
-By using this plugin you are bound by the Google Maps <a href="http://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">terms of use</a>.  The information presented here and on our website is for informational purposes only and is not intended to be legal advise.
-
-How do I show CongressLookup on my site?
+<i>How do I show CongressLookup on my site?</i><br />
 Use the following shortcode in a page or post:
 
     [CongressLookup]
 
 Use the following code in your template, placed outside the loop:
 
-    `<?php echo do_shortcode("[CongressLookup]"); ?>`
+    <?php echo do_shortcode("[CongressLookup]"); ?>
 
 
 
