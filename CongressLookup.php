@@ -23,8 +23,9 @@ function CongressLookup_install()
 	update_option('congress_cache', 1);
 	update_option('congress_cache_time', 30);
 	update_option('congress_themes', 'modern');
+	update_option('congress_select_choice' , 'all');
 	update_option('congress_photos_last_modified', '1307992245');
-	update_option('congress_options', array(0=>'fax', 1=> 'phone', 2=> 'webform', 3=> 'picture'));
+	update_option('congress_options', array(0=>'title', 1=>'first_name', 2=>'last_name', 3=>'picture', 4=>'chamber', 5=>'state_rank', 6=> 'state_name', 7=> 'website', 8=> 'contact_form'));
 }
 
 
@@ -50,10 +51,21 @@ function legislators_start()
 
 
 	if(get_option('congress_key')):
-
+        
+         $schoice = get_option('congress_select_choice');
+	                                 
+         if($schoice == 'representative'){
+         	$htext = 'Locate your Representatives';
+         } 
+         elseif($schoice == 'senator'){
+         	$htext = 'Locate Your Senators';
+         }
+         else{
+            $htext = 'Locate your Senators and Representative';
+        }
 		$html .='<form action="#" class="legislators" onsubmit="return getCongressFromAddress(this);"> 
 		
-			<p class="le_head">Locate your Senators and Representative</p>
+			<p class="le_head">'.$htext.'</p>
 					
 			<fieldset id="user-details">	
 				
@@ -83,7 +95,7 @@ function legislators_start()
 function legislators_head()
 {
 ?>
-	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css' />
 	<link href='<?php  echo LEGISLATORS_PATH; ?>style.css' rel='stylesheet' type='text/css' />
 	<?php if(get_option('congress_themes') && get_option('congress_themes') == 'modern'): ?><link href='<?php  echo LEGISLATORS_PATH; ?>light.css' rel='stylesheet' type='text/css' /> <?php endif; ?>
 	<?php if(get_option('congress_themes') && get_option('congress_themes') == 'custom'): ?>
@@ -95,7 +107,7 @@ function legislators_head()
 			</style>
 		<?php endif; ?>
 	<?php endif; ?>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript">
 		var geo_json = "<?php  echo LEGISLATORS_PATH; ?>getData.php";
 	</script>
@@ -210,6 +222,7 @@ function qkCongressLookup_registerSettings() { // whitelist options
 	register_setting( 'qkCongressLookup-group', 'congress_options' );
 	register_setting( 'qkCongressLookup-group', 'congress_themes' );
 	register_setting( 'qkCongressLookup-group', 'congress_themes_css' );
+	register_setting( 'qkCongressLookup-group', 'congress_select_choice' );
 }
 
 function showAdminMessages()
@@ -221,6 +234,7 @@ function showAdminMessages()
 			echo '<div id="message" class="error fade"><p><strong>You need to update your congress photos. <a href="options-general.php?page=mt-cglu&photos-updated=true">Click Here to update it</a></strong></p></div>'; 
 }
 
+ /* For settings of Congress Lookup */
 function qkCongressLookupSettings() {
 	if( get_option('congress_themes') == 'custom' && !get_option('congress_themes_css'))
 	{
@@ -249,36 +263,46 @@ function qkCongressLookupSettings() {
 			<tbody>
 				<tr valign="top">
 					<th scope="row"><label for="congress_key">Sunlight API Key:</label></th>
-					<td>
+					<td colspan="2">
 						<input name="congress_key" type="text" size="45" value="<?php echo get_option('congress_key'); ?>" >
 						<p>Get your API Key at the <a href="http://services.sunlightlabs.com/accounts/register/" target="_blank">Sunlight Foundation</a></p>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th scope="row"><label>What to display?:</label></th>
-					<td>
+					<td colspan="2">
 						<table>
 							<tbody>
-								<tr>
+								<tr>								 
 									<td>
-										<input name="congress_options[]" type="checkbox" id="district" value="district" <?php echo qkCongressCheckOptions("district"); ?>> <label for="district">District</label> <br />
-										<input name="congress_options[]" type="checkbox" id="state" value="state" <?php echo qkCongressCheckOptions("state"); ?>> <label for="state">State</label> <br />
-										<input name="congress_options[]" type="checkbox" id="email" value="email" <?php echo qkCongressCheckOptions("email"); ?>> <label for="email">Email</label> <br />
-										<input name="congress_options[]" type="checkbox" id="qktitle" value="title" <?php echo qkCongressCheckOptions("title"); ?>> <label for="qktitle">Title</label> 
+										<input name="congress_options[]" type="checkbox" id="title" value="title" <?php echo qkCongressCheckOptions("title"); ?>>&nbsp;<label for="title">Title</label> <br />
+										<input name="congress_options[]" type="checkbox" id="first_name" value="first_name" <?php echo qkCongressCheckOptions("first_name"); ?>>&nbsp;<label for="first_name">First&nbsp;Name</label> <br />
+										<input name="congress_options[]" type="checkbox" id="last_name" value="last_name" <?php echo qkCongressCheckOptions("last_name"); ?>>&nbsp;<label for="last_name">Last&nbsp;Name</label> <br />
+										<input name="congress_options[]" type="checkbox" id="picture" value="picture" <?php echo qkCongressCheckOptions("picture"); ?>>&nbsp;<label for="picture">Picture</label> <br />
+										<input name="congress_options[]" type="checkbox" id="chamber" value="chamber" <?php echo qkCongressCheckOptions("chamber"); ?>>&nbsp;<label for="chamber">Chamber</label> <br />
+										<input name="congress_options[]" type="checkbox" id="state_rank" value="state_rank" <?php echo qkCongressCheckOptions("state_rank"); ?>>&nbsp;<label for="state_rank">State&nbsp;Rank</label> <br />
+										<input name="congress_options[]" type="checkbox" id="state_name" value="state_name" <?php echo qkCongressCheckOptions("state_name"); ?>>&nbsp;<label for="state_name">State&nbsp;Name</label>
 									</td>
 									<td>&nbsp;&nbsp;</td>
 									<td>
-										<input name="congress_options[]" type="checkbox" id="website" value="website" <?php echo qkCongressCheckOptions("website"); ?>> <label for="website">Website</label> <br />
-										<input name="congress_options[]" type="checkbox" id="fax" value="fax" <?php echo qkCongressCheckOptions("fax"); ?>> <label for="fax">Fax</label> <br />
-										<input name="congress_options[]" type="checkbox" id="phone" value="phone" <?php echo qkCongressCheckOptions("phone"); ?>> <label for="phone">Phone</label> <br />
-										<input name="congress_options[]" type="checkbox" id="webform" value="webform" <?php echo qkCongressCheckOptions("webform"); ?>> <label for="webform">Webform</label> 
+										<input name="congress_options[]" type="checkbox" id="website" value="website" <?php echo qkCongressCheckOptions("website"); ?>>&nbsp;<label for="website">Website</label> <br />
+										<input name="congress_options[]" type="checkbox" id="contact_form" value="contact_form" <?php echo qkCongressCheckOptions("contact_form"); ?>>&nbsp;<label for="contact_form">Contact&nbsp;Form</label> <br />
+										<input name="congress_options[]" type="checkbox" id="fax" value="fax" <?php echo qkCongressCheckOptions("fax"); ?>>&nbsp;<label for="fax">Fax</label> <br />
+										<input name="congress_options[]" type="checkbox" id="phone" value="phone" <?php echo qkCongressCheckOptions("phone"); ?>>&nbsp;<label for="phone">Phone</label> <br />
+										<input name="congress_options[]" type="checkbox" id="party" value="party" <?php echo qkCongressCheckOptions("party"); ?>>&nbsp;<label for="party">Party</label> <br />
+										<input name="congress_options[]" type="checkbox" id="name_suffix" value="name_suffix" <?php echo qkCongressCheckOptions("name_suffix"); ?>>&nbsp;<label for="name_suffix">Name&nbsp;Suffix</label> <br />
+										<input name="congress_options[]" type="checkbox" id="middle_name" value="middle_name" <?php echo qkCongressCheckOptions("middle_name"); ?>>&nbsp;<label for="middle_name">Middle&nbsp;Name</label>
+
 									</td>
 									<td>&nbsp;&nbsp;</td>
 									<td>
-										<input name="congress_options[]" type="checkbox" id="gender" value="gender" <?php echo qkCongressCheckOptions("gender"); ?>> <label for="gender">Gender</label> <br />
-										 <input name="congress_options[]" type="checkbox" id="birthdate" value="birthdate" <?php echo qkCongressCheckOptions("birthdate"); ?>> <label for="birthdate">Birthdate</label><br />
-										<input name="congress_options[]" type="checkbox" id="congresspedia_url" value="congresspedia_url" <?php echo qkCongressCheckOptions("congresspedia_url"); ?>> <label for="congresspedia_url">Congresspedia URL</label> <br />
-										<input name="congress_options[]" type="checkbox" id="picture" value="picture" <?php echo qkCongressCheckOptions("picture"); ?>> <label for="picture">Picture</label> 
+										<input name="congress_options[]" type="checkbox" id="facebook_id" value="facebook_id" <?php echo qkCongressCheckOptions("facebook_id"); ?>>&nbsp;<label for="facebook_id">Facebook&nbsp;ID</label> <br />
+										<input name="congress_options[]" type="checkbox" id="youtube_id" value="youtube_id" <?php echo qkCongressCheckOptions("youtube_id"); ?>>&nbsp;<label for="youtube_id">Youtube&nbsp;ID</label><br />
+										<input name="congress_options[]" type="checkbox" id="twitter_id" value="twitter_id" <?php echo qkCongressCheckOptions("twitter_id"); ?>>&nbsp;<label for="twitter_id">Twitter&nbsp;ID</label> <br />
+										<input name="congress_options[]" type="checkbox" id="votesmart_id" value="votesmart_id" <?php echo qkCongressCheckOptions("votesmart_id"); ?>>&nbsp;<label for="votesmart_id">Votesmart&nbsp;ID</label> <br />
+										<input name="congress_options[]" type="checkbox" id="office" value="office" <?php echo qkCongressCheckOptions("office"); ?>>&nbsp;<label for="office">Office</label> <br />
+										<input name="congress_options[]" type="checkbox" id="term_end" value="term_end" <?php echo qkCongressCheckOptions("term_end"); ?>>&nbsp;<label for="term_end">Term&nbsp;End</label> <br />
+										<input name="congress_options[]" type="checkbox" id="term_start" value="term_start" <?php echo qkCongressCheckOptions("term_start"); ?>>&nbsp;<label for="term_start">Term&nbsp;Start</label>
 									</td>
 								</tr>
 							</tbody>
@@ -286,10 +310,20 @@ function qkCongressLookupSettings() {
 					</td>
 				</tr>
 				<tr valign="top">
+					<th scope="row"><label for="congress_select_choice"> Search For :</label></th>
+					<td>
+						<select name="congress_select_choice" id="congress_select_choice">
+							<option value="" <?php echo selected(get_option('congress_select_choice'),'all'); ?>> Search for All </option>
+							<option value="representative" <?php echo selected(get_option('congress_select_choice'),'representative'); ?>> Representatives Only </option>
+							<option value="senator" <?php echo selected(get_option('congress_select_choice'),'senator'); ?>> Senators Only </option>
+						</select>
+					</td>
+				</tr>
+				<tr valign="top">
 					<th scope="row"><label>Cache:</label></th>
 					<td>
 						<p>Enable this to cache the data returned by the API, to reduce the number of requests, and for fast loading. Select for how many minutes you would like the data to be cached &amp; saved</p>
-						<input name="congress_cache" id="congress_cache" type="checkbox" value="1" <?php echo checked(get_option('congress_cache'),1); ?>> <label for="congress_cache">Enable cache?</label>
+						<input name="congress_cache" id="congress_cache" type="checkbox" value="1" <?php echo checked(get_option('congress_cache'),1); ?>>&nbsp;<label for="congress_cache">Enable&nbsp;cache?</label>
 						<p>
 							<label for="congress_cache_time">Cache time:</label>
 							<input name="congress_cache_time" id="congress_cache_time" type="text" size="5" style="width:40px" value="<?php echo get_option('congress_cache_time'); ?>"> <small><i>minutes</i></small>
@@ -305,6 +339,17 @@ function qkCongressLookupSettings() {
 							}
 						?>
 					</td>
+                    <td valign="top" rowspan="2">
+		<div style="background-color: #FFFFE0;border: 1px solid #E8E7AE;padding: 10px;position: relative;text-align: center;top: 10px;width: 200px;">
+			<p>CongressLookup is free to use.  Please consider donating to help support the continued development of this plugin.  Thanks!</p>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="text-align:center;">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="3ZSYXP8PLH6AJ">
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</div>
+                    </td>
 				</tr>
 				<tr valign="top">
 					<th scope="row"><label for="congress_themes">Theme:</label></th>
@@ -331,7 +376,7 @@ function qkCongressLookupSettings() {
 				</tr>
 				<tr valign="top">
 					<th scope="row"><label>Photos of Members of Congress</label></th>
-					<td>
+					<td colspan="2">
 						<a class="button" href="options-general.php?page=mt-cglu&photos-updated=true" onclick="if(confirm('Are you sure?')){ return true; } else{ return false; }">Update The Photos</a><br /> &nbsp;We suggest you update when you first install CongressLookup to make sure your photos are up-to-date. &nbsp;<i>Note: May take some time to download from Sunlight Labs.  Please be patient.</i>
 						<?php
 							$downloads_folder = LEGISLATORS_PATH_BASE.'downloads/';
@@ -356,15 +401,7 @@ function qkCongressLookupSettings() {
 	
 		
 	</form>
-		<div style="position:absolute;top:10px;right:20px;width:20%;padding:10px;background-color:#FFFFE0;border:1px solid #E8E7AE">
-			<p>CongressLookup is free to use.  Please consider donating to help support the continued development of the project.</p>
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="text-align:center;">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="3ZSYXP8PLH6AJ">
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-				<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-			</form>
-		</div>
+
 	</div>
 	</div>
 

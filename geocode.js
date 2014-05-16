@@ -44,7 +44,8 @@ function congressInitialize(){
 		document.getElementById("congress_address").className = "";
 	};
 	
-		/*congressInitialized = true;
+		/*congressInitialized = false;
+		congressinitialized = true;
 	}*/
 	
 }

@@ -2,12 +2,10 @@
 
 	if(isset($_GET['lat']) && isset($_GET['lon']))
 	{
-		
-
 		require_once('../../../wp-load.php');
 		$url = plugin_dir_url(__FILE__);
 		
-		$api_call = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json?apikey=".get_option('congress_key')."&latitude=".$_GET['lat']."&longitude=".$_GET['lon'];
+		$api_call = "https://congress.api.sunlightfoundation.com/legislators/locate?apikey=".get_option('congress_key')."&latitude=".$_GET['lat']."&longitude=".$_GET['lon'];
 		
 		if(get_option("congress_cache"))
 		{
@@ -29,17 +27,33 @@
 				$a = get_option("congress_options");
 			else
 				$a = array();
-			
+						
 			echo '<div class="legislators_list">';
-			
-			foreach ($congress->response->legislators as $c) {
-				$pic_name = "pics/".$c->legislator->bioguide_id.".jpg";
+			$myselection = get_option('congress_select_choice');
+			if($myselection == 'representative')
+				$discard = 'senate';
+			elseif($myselection == 'senator')
+				$discard = 'house';
+			else
+				$discard = 'nothing';
 
+			foreach ($congress->results as $c) {
+               // print_r($c);
+				if($c->chamber == $discard){
+					continue;
+				}
+				$pic_name = "pics/".$c->bioguide_id.".jpg";
 
-			
 				if(is_array($a) &&count($a) > 0)
 				{
-					echo "<h3 class='legislator'>".$c->legislator->firstname." ".$c->legislator->lastname." <small>(".$c->legislator->state." ".$c->legislator->district.")</small></h3>";
+					if(in_array('middle_name', $a))
+					 $middle_name = $c->middle_name;
+					else
+					 $middle_name = "";
+					if($c->state_rank != "")
+					echo "<h3 class='legislator'>".$c->first_name. " ". $middle_name ." ".$c->last_name." <small>(". " ". ucwords($c->state_rank) .", ".$c->state_name." ". $c->district . " " .")</small></h3>";
+				    else
+				    echo "<h3 class='legislator'>".$c->first_name. " ". $middle_name ." ".$c->last_name." <small>(". " ". ucwords($c->state_rank) ." ".$c->state_name." ". $c->district . " " .")</small></h3>"; 	
 				
 					if(in_array("picture", $a))
 					{
@@ -48,23 +62,27 @@
 					}
 					
 					echo "<ul class='legislator-contact'>";
-
-					foreach($c->legislator AS $key=>$value)
-					{					
+         
+					foreach($c AS $key=>$value)
+					{				
 						if(in_array($key, $a))
 						{
+							$tempval = ucwords(str_replace('_', " ", $key));
 							if(empty($value)) $value = "Not Available";
-							if(strpos($value, "http:") !== false) $value = '<a href="'.$value.'" target="_blank" rel="nofollow">'.$value.'</a>';
-							echo "<li>$key:  $value</li>";
+							if(strpos($value, "http:") !== false || strpos($value, "https:") !== false) $value = '<a href="'.$value.'" target="_blank">'.$value.'</a>';
+							if($key == 'facebook_id') $value = '<a href="https://www.facebook.com/'.$value.'" target="_blank"> https://www.facebook.com/'.$value.'</a>';
+							if($key == 'twitter_id') $value = '<a href="https://twitter.com/'.$value.'" target="_blank"> https://twitter.com/'.$value.'</a>';
+							if($key == 'votesmart_id') $value = '<a href="http://votesmart.org/candidate/'.$value.'" target="_blank"> http://votesmart.org/candidate/'.$value.'</a>';
+							if($key == 'youtube_id') $value = '<a href="https://www.youtube.com/'.$value.'" target="_blank"> http://www.youtube.com/user/'.$value.'</a>';
+							echo "<li>$tempval :  $value</li>";
 						}
 					}
 
 					echo "</ul>";
 				}
-				
 				else
 				{
-					echo "<h3 class='legislator'>".$c->legislator->firstname." ".$c->legislator->lastname." <small>(".$c->legislator->state." ".$c->legislator->district.")</small></h3>";
+					echo "<h3 class='legislator'>".$c->first_name." ".$c->last_name." <small>(". ucwords($c->state_rank) .", ".$c->state_name.")</small></h3>";
 				}
 				
 			} 

@@ -1,10 +1,10 @@
 === CongressLookup ===
-Contributors: ConstructiveGrowth, Quick2ouch, trishahdee
+Contributors: ConstructiveGrowth, Quick2ouch, gsnarawat, trishahdee
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3ZSYXP8PLH6AJ
 Tags: congress, lookup, senator, representative, US congress, find senator, find representative
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 1.0
+Tested up to: 3.9.1
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,8 +173,15 @@ http://congresslookup.com</p>
 
 == Changelog ==
 
+= 2.0 =
+* Update 15 May 2014
+Replaced the use of deprecated Sunlight Labs <b>Congress API</b> with more comprehensive <b>Sunlight Congress API</b>.
+Added more congressperson stats, now available from new API, with checkboxes in admin.
+Added ability for admin to choose to display only Senators, only Representatives, or both (default) from a dropdown menu in admin.
+Minor CSS changes
+
 = 1.0 =
-* Original version
+* Original version, 23 August 2012
 
 == Upgrade Notice ==
 
