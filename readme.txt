@@ -41,7 +41,7 @@ http://congresslookup.com</p>
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Or in your Plugin page "Add Plugin" search: enter "CongressLookup" then install and activate.
 1. To obtain a free Sunlight Labs API key for your site, <a href="http://services.sunlightlabs.com/accounts/register/" target="_blank">create a free account</a> and it will be emailed to you.
-1. Click the activation link in the Sunlight Labs email.
+1. <b>IMPORTANT:</b> Click the activation link in the Sunlight Labs email.
 1. Enter API key and configure in:  WP Admin > Settings > CongressLookup
 1. Use the following shortcode in a page or post: `[CongressLookup]`
 1. Use the following code in your template, placed outside the loop:<br />
@@ -125,18 +125,27 @@ Members of Congress change after elections and sometimes leave or are replaced m
 
 The following information can be displayed for each legislator.  You can turn any of these on/off in the Admin settings:</p>
 <ul style="margin: -10px 0 20px 100px;">
-<li>Birthdate,</li>
-<li>Congresspedia URL,</li>
-<li>District,</li>
-<li>Email (not usually publicized any longer),</li>
-<li>Fax,</li>
-<li>Gender,</li>
-<li>Picture,</li>
-<li>Phone,</li>
-<li>State,</li>
-<li>Title,</li>
-<li>Webform (web-based contact form), and</li>
-<li>Website.</li>
+ <li>Title</li>
+ <li>First Name</li>
+ <li>Last Name</li>
+ <li>Picture</li>
+ <li>Chamber</li>
+ <li>State Rank</li>
+ <li>State Name</li>
+ <li>Website</li>
+ <li>Contact Form</li>
+ <li>Fax</li>
+ <li>Phone</li>
+ <li>Party</li>
+ <li>Name Suffix</li>
+ <li>Middle Name</li>
+ <li>Facebook ID</li>
+ <li>Youtube ID</li>
+ <li>Twitter ID</li>
+ <li>Votesmart ID</li>
+ <li>Office</li>
+ <li>Term End</li>
+<li>Term Start</li>
 </ul>
 
 = How much information must be entered in the address field to get results? =
@@ -185,6 +194,6 @@ Minor CSS changes
 
 == Upgrade Notice ==
 
-= 1.0 =
-No upgrade necessary
+= 2.0 =
+Upgrade is necessary before the 2014 Congress inauguration (January 2015), which is when the deprecated Sunlight Foundation Congress API will stop working.
 
