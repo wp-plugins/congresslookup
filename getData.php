@@ -28,8 +28,8 @@
 			else
 				$a = array();
 						
-			echo '<div class="legislators_list">';
-			$myselection = get_option('congress_select_choice');
+			echo '<div class="legislators_list">';			
+			$myselection = $_GET['show'];
 			if($myselection == 'representative')
 				$discard = 'senate';
 			elseif($myselection == 'senator')
@@ -37,8 +37,7 @@
 			else
 				$discard = 'nothing';
 
-			foreach ($congress->results as $c) {
-               // print_r($c);
+			foreach ($congress->results as $c) {              
 				if($c->chamber == $discard){
 					continue;
 				}

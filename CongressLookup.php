@@ -23,7 +23,7 @@ function CongressLookup_install()
 	update_option('congress_cache', 1);
 	update_option('congress_cache_time', 30);
 	update_option('congress_themes', 'modern');
-	update_option('congress_select_choice' , 'all');
+	//update_option('congress_select_choice' , 'all');
 	update_option('congress_photos_last_modified', '1307992245');
 	update_option('congress_options', array(0=>'title', 1=>'first_name', 2=>'last_name', 3=>'picture', 4=>'chamber', 5=>'state_rank', 6=> 'state_name', 7=> 'website', 8=> 'contact_form'));
 }
@@ -45,14 +45,20 @@ if ( is_admin() ){ // admin actions
 
 function qkCongressLookupMenu(){ add_options_page('CongressLookup', 'CongressLookup', 'administrator', 'mt-cglu', 'qkCongressLookupSettings'); }
 
-function legislators_start()
-{
+function legislators_start($atts)
+{	
+    
+    extract( shortcode_atts( array(
+          'show' => 'all',
+        ), $atts, 'CongressLookup' ) );
+    
+    //$show = $show;
+	
 	$html = '';
-
 
 	if(get_option('congress_key')):
         
-         $schoice = get_option('congress_select_choice');
+         $schoice = $show;
 	                                 
          if($schoice == 'representative'){
          	$htext = 'Locate your Representatives';
@@ -70,6 +76,7 @@ function legislators_start()
 			<fieldset id="user-details">	
 				
 				<label for="congress_address">Address:</label>
+				<input type="hidden" name="showon" value="'.$show.'" id="congress_showon"/>
 				<input type="text" name="congress_address" id="congress_address" value="" />
 				<input type="submit" value="Find" name="submit" class="submit" />
 				<img src="'.LEGISLATORS_PATH.'loader.gif" id="jloader" alt="loading" title="Loading" />
@@ -222,7 +229,7 @@ function qkCongressLookup_registerSettings() { // whitelist options
 	register_setting( 'qkCongressLookup-group', 'congress_options' );
 	register_setting( 'qkCongressLookup-group', 'congress_themes' );
 	register_setting( 'qkCongressLookup-group', 'congress_themes_css' );
-	register_setting( 'qkCongressLookup-group', 'congress_select_choice' );
+	//register_setting( 'qkCongressLookup-group', 'congress_select_choice' );
 }
 
 function showAdminMessages()
@@ -310,16 +317,6 @@ function qkCongressLookupSettings() {
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="congress_select_choice"> Search For :</label></th>
-					<td>
-						<select name="congress_select_choice" id="congress_select_choice">
-							<option value="" <?php echo selected(get_option('congress_select_choice'),'all'); ?>> Search for All </option>
-							<option value="representative" <?php echo selected(get_option('congress_select_choice'),'representative'); ?>> Representatives Only </option>
-							<option value="senator" <?php echo selected(get_option('congress_select_choice'),'senator'); ?>> Senators Only </option>
-						</select>
-					</td>
-				</tr>
-				<tr valign="top">
 					<th scope="row"><label>Cache:</label></th>
 					<td>
 						<p>Enable this to cache the data returned by the API, to reduce the number of requests, and for fast loading. Select for how many minutes you would like the data to be cached &amp; saved</p>
@@ -388,11 +385,15 @@ function qkCongressLookupSettings() {
 							}
 						?>
 					</td>
-				</tr>
+				</tr>				
 				<tr valign="top">
-					<th scope="row"><label>Short Code:</label></th>
-					<td>
-						<p>[CongressLookup]</p>
+					<th scope="row"><label>Short Codes:</label></th>
+					<td colspan="2">
+					  <table>
+                                             <tr> <th> For Searching All: </th> <td>[CongressLookup]</td> </tr>
+                                             <tr> <th> For Searching Senators only: </th> <td>[CongressLookup show="senator"]</td> </tr>
+                                             <tr> <th> For Searching Representatives only: </th> <td>[CongressLookup show="representative"]</td> </tr>
+                                          </table>
 					</td>
 				</tr>
 			</tbody>

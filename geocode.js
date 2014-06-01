@@ -53,6 +53,7 @@ function congressInitialize(){
 function getCongressFromAddress(f)
 {
 	var address = f.congress_address.value;
+	var showon = f.showon.value;
 	
 	if(!address || address == "" || address.length == 0)
 	{
@@ -72,7 +73,7 @@ function getCongressFromAddress(f)
 			marker.setPosition(results[0].geometry.location);
 			map.setCenter(results[0].geometry.location);
 			
-			 var url = geo_json+"?lat="+results[0].geometry.location.lat()+"&lon="+results[0].geometry.location.lng();
+			 var url = geo_json+"?lat="+results[0].geometry.location.lat()+"&lon="+results[0].geometry.location.lng()+"&show="+showon;
 			 getCongressData(url);
 		  }
 		  else
