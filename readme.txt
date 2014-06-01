@@ -197,7 +197,7 @@ If CongressLookup is not working properly, please try the following:<br />
 http://www.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen<br />
 Also, disable the cache option for testing, then when allow-url-fopen is enabled and CongressLookup works then enable the cache again.
 <br /><br />
-5. If you are still having any issues, please put in a support request.
+5. If you are still having any issues, please put in a <a href="http://wordpress.org/support/plugin/congresslookup">support request</a>.
 
 == Screenshots ==
 
