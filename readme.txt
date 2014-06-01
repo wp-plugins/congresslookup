@@ -51,7 +51,7 @@ Search for Representatives only: `[CongressLookup show="representative"]`
     `<?php echo do_shortcode("[CongressLookup]"); ?>`<br />
     `<?php echo do_shortcode("[CongressLookup show="senator"]"); ?>`<br />
     `<?php echo do_shortcode("[CongressLookup show="representative"]"); ?>`
-1. If you have any problems, please see our<a href="http://wordpress.org/plugins/congresslookup/other_notes/" target="_blank">Trouble Shooting Guide</a> before putting in a support request.
+1. If you have any problems, please see our <a href="http://wordpress.org/plugins/congresslookup/other_notes/" target="_blank">Trouble Shooting Guide</a> before putting in a support request.
 
 == Frequently Asked Questions ==
 

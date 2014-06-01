@@ -3,7 +3,7 @@
 Plugin Name: CongressLookup
 Plugin URI: http://CongressLookup.com/
 Description: CongressLookup is powered by data APIs from the Sunlight Foundation's <a href="http://services.sunlightlabs.com/accounts/register/" targer="_blank" >Sunlight Labs</a> and <a href="http://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank">Google Maps</a>. To configure plugin, go to: Settings > CongressLookup.   <a href="constructivegrowth.net/wordpress-plugins/congresslookup/congresslookup-faqs/" target="_blank">Quick Start Guide and FAQs</a>.  Suggestion for improvements are always welcome.
-Version: 2.0
+Version: 2.1
 Author: Constructive Growth LLC
 Author URI: http://constructivegrowth.net/
 License: GNU General Public License v2 or later
