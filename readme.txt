@@ -186,16 +186,17 @@ http://congresslookup.com</p>
 
 == Troubleshooting ==
 
-If CongressLookup is not working properly, please try the following:<br />
+If CongressLookup is not working properly, please try the following steps:
+<br /><br />
 1. API NOT ACTIVATED: In the Sunlight Labs email, the one they sent you with your API key, make sure you have clicked the activation link.
 <br /><br />
 2. PLUGIN CONFLICT: Please try deactivating all plugins except CongressLookup. If CongressLookup does then work, turn on one plugin at a time and test it again until you find the plugin it conflicts with. Please let us know what plugin this is.
 <br /><br />
 3. THEME CONFLICT: If there is still an issue after testing for a plugin conflict, and all other plugins are turned off, please try temporarily switching to another theme.  We recommend trying one of the default WordPress themes.
 <br /><br />
-4. SERVER SETTINGS: Please tell your webmaster to enable allow-url-fopen in php.ini
+4. SERVER SETTINGS: If none of the above has helped, please tell your webmaster to enable allow-url-fopen in php.ini
 http://www.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen<br />
-Also, disable the cache option for testing, then when allow-url-fopen is enabled and CongressLookup works then enable the cache again.
+Whe doing this, disable the cache option for testing, then when allow-url-fopen is enabled and CongressLookup works only then enable the cache again.
 <br /><br />
 5. If you are still having any issues, please put in a <a href="http://wordpress.org/support/plugin/congresslookup">support request</a>.
 
@@ -206,7 +207,7 @@ Also, disable the cache option for testing, then when allow-url-fopen is enabled
 
 == Changelog ==
 
-= 2.01=
+= 2.01 =
 * Update 01 June 2014
 1. Added two new shortcodes for displaying (1) US Senators only, and (2) US Representatives only.
 
