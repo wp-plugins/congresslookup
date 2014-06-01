@@ -51,6 +51,7 @@ Search for Representatives only: `[CongressLookup show="representative"]`
     `<?php echo do_shortcode("[CongressLookup]"); ?>`<br />
     `<?php echo do_shortcode("[CongressLookup show="senator"]"); ?>`<br />
     `<?php echo do_shortcode("[CongressLookup show="representative"]"); ?>`
+1. If you have any problems, please see our<a href="http://wordpress.org/plugins/congresslookup/other_notes/" target="_blank">Trouble Shooting Guide</a> before putting in a support request.
 
 == Frequently Asked Questions ==
 
@@ -183,15 +184,14 @@ http://congresslookup.com</p>
 
 == Troubleshooting ==
 
-If CongressLookup is not working properly, please try the following:
-1. API NOT ACTIVATED: In the Sunlight Labs email, the one they sent you with your API key, make sure you have clicked the activation link.
-1. PLUGIN CONFLICT: Please try deactivating all plugins except CongressLookup. If CongressLookup does then work, turn on one plugin at a time and test it again until you find the plugin it conflicts with. Please let us know what plugin this is.
-1. THEME CONFLICT: If there is still an issue after testing for a plugin conflict, and all other plugins are turned off, please try temporarily switching to another theme.  We recommend trying one of the default WordPress themes.
-1. SERVER SETTINGS: Please tell your webmaster to enable allow-url-fopen in php.ini
-http://www.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen
-
-Also, disable the cache option for testing, then when allow-url-fopen is enabled and CongressLookup works then enable the cache again.
-1. If you are still having any issues, please put in a support request.
+If CongressLookup is not working properly, please try the following:<br />
+1. API NOT ACTIVATED: In the Sunlight Labs email, the one they sent you with your API key, make sure you have clicked the activation link.<br />
+2. PLUGIN CONFLICT: Please try deactivating all plugins except CongressLookup. If CongressLookup does then work, turn on one plugin at a time and test it again until you find the plugin it conflicts with. Please let us know what plugin this is.<br />
+3. THEME CONFLICT: If there is still an issue after testing for a plugin conflict, and all other plugins are turned off, please try temporarily switching to another theme.  We recommend trying one of the default WordPress themes.<br />
+4. SERVER SETTINGS: Please tell your webmaster to enable allow-url-fopen in php.ini
+http://www.php.net/manual/en/filesystem.configuration.php#ini.allow-url-fopen<br />
+Also, disable the cache option for testing, then when allow-url-fopen is enabled and CongressLookup works then enable the cache again.<br />
+5. If you are still having any issues, please put in a support request.
 
 == Screenshots ==
 
