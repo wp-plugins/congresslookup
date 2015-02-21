@@ -49,7 +49,7 @@
 					 $middle_name = $c->middle_name;
 					else
 					 $middle_name = "";
-					if($c->state_rank != "")
+					if(isset($c->state_rank) && $c->state_rank != "")
 					echo "<h3 class='legislator'>".$c->first_name. " ". $middle_name ." ".$c->last_name." <small>(". " ". ucwords($c->state_rank) .", ".$c->state_name." ". $c->district . " " .")</small></h3>";
 				    else
 				    echo "<h3 class='legislator'>".$c->first_name. " ". $middle_name ." ".$c->last_name." <small>(". " ". ucwords($c->state_rank) ." ".$c->state_name." ". $c->district . " " .")</small></h3>"; 	

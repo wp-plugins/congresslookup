@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: congress, lookup, senator, representative, US congress, find senator, find representative
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 2.1
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -209,7 +209,11 @@ Whe doing this, disable the cache option for testing, then when allow-url-fopen 
 
 == Changelog ==
 
-= 2.01 =
+= 2.1.1 =
+* Update 21 February 2015
+1.  Fixed an "Undefined property" error.
+
+= 2.1 =
 * Update 01 June 2014
 1. Added two new shortcodes for displaying (1) US Senators only, and (2) US Representatives only.
 
@@ -226,7 +230,7 @@ Whe doing this, disable the cache option for testing, then when allow-url-fopen 
 == Upgrade Notice ==
 
 = 2.1 =
-Add two new shortcodes for searching US Senators only and US Representatives only.
+Added two new shortcodes for searching US Senators only and US Representatives only.
 
 = 2.0 =
 Upgrade is necessary before the 2014 Congress inauguration (January 2015), which is when the deprecated Sunlight Foundation Congress API will stop working.
