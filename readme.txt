@@ -229,6 +229,9 @@ Whe doing this, disable the cache option for testing, then when allow-url-fopen 
 
 == Upgrade Notice ==
 
+= 2.1.1 =
+Fixed an "Undefined property" error.
+
 = 2.1 =
 Added two new shortcodes for searching US Senators only and US Representatives only.
 
